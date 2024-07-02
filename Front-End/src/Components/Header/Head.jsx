@@ -12,11 +12,6 @@ const Head = () => {
                 <span>Get Best and high quality Furniture</span>
 
             </div>
-            <div className="social-links-icon">
-            <a href="#" className="social-links">{ <FaFacebook /> }</a>
-            <a href="#" className="social-links">{ <FaTwitter/> } </a>
-            <a href="#" className="social-links">{ <FaInstagram/> }</a>
-            </div>
             <div className="access">
               <div className="login">
               <a href="">Login</a>
@@ -25,6 +20,12 @@ const Head = () => {
               <a href="">Signup</a>
               </div>
             </div>
+            <div className="social-links-icon">
+            <a href="#" className="social-links">{ <FaFacebook /> }</a>
+            <a href="#" className="social-links">{ <FaTwitter/> } </a>
+            <a href="#" className="social-links">{ <FaInstagram/> }</a>
+            </div>
+            
         </div>
 
       </section>
