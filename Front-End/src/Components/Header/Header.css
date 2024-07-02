@@ -1,0 +1,113 @@
+.head{
+    padding: 20px 0;
+    color: #fff;
+    background: #279b91;
+}
+.logo h1{
+    font-size: 35px;
+    font-weight: 900;
+}
+.social-links-icon{
+    margin-top: 10px;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+
+.access{
+  display: flex;
+  
+ 
+}
+.login a{
+  color: white;
+  font-size: 19px;
+  margin-right: 10px;
+  
+}
+.signup a{
+  color: #fff;
+  font-size: 19px;
+  margin-left: 10px;
+}
+.social-links {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 10px;
+    font-size: 22px;
+   
+   
+  }
+  .social-links:hover{
+    color: #1eb2a6;
+  }
+  
+  
+  .header-top{
+    padding: 20px;
+    margin:10px ; 
+    
+  }
+  header {
+    background-color:#4bd1c6;
+   
+  }
+  header .nav {
+    display: flex !important;
+  }
+  header li {
+    margin-right: 40px;
+  }
+  header ul {
+    padding: 30px 20px;
+  }
+  header ul li a {
+    color: #fff;
+    font-weight: 500;
+    transition: 0.5s;
+  }
+  header ul li a:hover {
+    color: #1eb2a6;
+  }
+ 
+  .toggle {
+    display: none;
+  }
+  
+  @media screen and (max-width: 768px) {
+   
+    header {
+      margin: 0;
+      background-color: #52dbd0;
+      position: relative;
+    }
+    header ul.main {
+      display: none;
+    }
+    header ul li {
+      margin-bottom: 20px;
+    }
+    .toggle {
+      display: block;
+      background: none;
+      color: #fff;
+      font-size: 30px;
+      position: absolute;
+      margin-top: 25px;
+      right: 0;
+      top: -20px;
+    }
+    .mobile-nav {
+      position: absolute;
+      top: 7vh;
+      left: 0;
+      width: 100%;
+      background-color: #9daaa9;
+    }
+  }
+  @media screen and (max-width: 340px) {
+    .social-links{
+      display: none;
+    }
+  }
