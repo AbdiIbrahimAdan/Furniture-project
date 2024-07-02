@@ -1,0 +1,11 @@
+.shop{
+    padding: 20px;
+ 
+}
+.products-display{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    
+}

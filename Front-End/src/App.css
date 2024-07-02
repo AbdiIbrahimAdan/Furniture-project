@@ -1,6 +1,4 @@
-
-
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
 
 *{
   padding: 0;
@@ -8,7 +6,7 @@
   box-sizing: border-box;
 }
 body{
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Roboto", sans-serif;
   background: rgb(248, 242, 242);
 }
 .container{
@@ -32,4 +30,23 @@ li{
 p{
   line-height: 30px;
   font-size: 18px;
+}
+button{
+  padding:17px 30px;
+  background:#69b390;
+  color: white;
+  font-weight: 600;
+  border:none;
+  border-radius: 3px;
+  cursor: pointer;
+  box-shadow: 0 24px 36px -11px rbg(0 0 0 / 9%);
+  margin: 60px 5px 0 0;
+  transition: 0.5s;
+}
+button:hover{
+  box-shadow: none;
+}
+.primary-btn{
+  background-color: #69b390;
+  color: white;
 }

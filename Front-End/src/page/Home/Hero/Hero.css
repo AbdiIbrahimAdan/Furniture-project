@@ -1,5 +1,5 @@
 .hero{
-    background-image: url(./../../assets/heroimage.jpg);
+    background-image: url("./../../../assets/heroimage.jpg");
     background-size: cover;
     background-attachment: fixed;
     position: absolute;
@@ -9,7 +9,7 @@
     height: 100vh;
     padding-top: 20%;
     padding-right: 50px;
-    color: #aca0a0;
+    color: #fff;
     z-index: -1;
 }
 
