@@ -13,10 +13,10 @@ const Shop = () => {
            return (
             <div key={product.id} className='product-finder'>
            <img src={product.image} alt={product.name} className="product-image" />
-           <h3 className='product-name'>{product.name}</h3>
-           <p className='product-description'>{product.description}</p>
-           <p className='product-price'>{product.price}</p>
-            <button>Add to cart</button>
+           <h3>{product.name}</h3>
+           <p>{product.description}</p>
+           <p >{product.price}</p>
+            <button className='cart-btn'>Add to cart</button>
             </div>
            )
         })} 
