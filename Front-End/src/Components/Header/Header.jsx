@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { FaBars } from "react-icons/fa6";
 import { FaTimes } from "react-icons/fa";
 import { FaShoppingCart } from "react-icons/fa";
+import Login from '../../page/Login/Login';
+import Signup from '../../page/Signup/Signup';
 import './Header.css';
 import Head from './Head';
 

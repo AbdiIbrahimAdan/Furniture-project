@@ -41,4 +41,4 @@ const initialValues = {
   );
 };
 
-export default Login
+export default Login;
