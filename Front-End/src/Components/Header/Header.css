@@ -20,16 +20,11 @@
   gap: 1rem;
   
 }
-.login a{
+.register ,nav, ul, li{
   color: white;
   font-size: 19px;
-  
 }
-.signup a{
-  color: #fff;
-  font-size: 19px;
- 
-}
+
 .social-links {
     color: #fff;
     text-decoration: none;
@@ -71,7 +66,13 @@
   header ul li a:hover {
     color: #1eb2a6;
   }
- 
+  .cart-icons{
+    margin-top: 30px;
+    align-items: center;
+    color: white;
+    margin-right: 50px;
+    font-size: 20px;
+  }
   .toggle {
     display: none;
   }

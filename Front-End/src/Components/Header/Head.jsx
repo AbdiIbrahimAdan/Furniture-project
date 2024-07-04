@@ -1,6 +1,7 @@
 import { FaFacebook } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Head = () => {
   return (
@@ -13,11 +14,13 @@ const Head = () => {
 
             </div>
             <div className="access">
-              <div className="login">
-              <a href="">Login</a>
-              </div>
-              <div className="signup">
-              <a href="">Signup</a>
+              <div className="register">
+            <nav>
+              <ul>
+                <li ><Link to='/login'>Login</Link></li>
+                <li><Link to='/signup'>Sign up</Link></li>
+              </ul>
+            </nav>
               </div>
             </div>
             <div className="social-links-icon">

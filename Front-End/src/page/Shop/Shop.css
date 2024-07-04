@@ -9,9 +9,13 @@
     gap: 20px;
     
 }
+h2{
+    text-align: center;
+}
 .product-finder{
     border: 1px solid #ccc;
     padding: 10px;
+    margin-top: 50px;
     text-align: center;
     width: 300px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -29,6 +33,7 @@
 }
 .product-finder h3{
     margin: 10px 0;
+    
 }
 .product-finder p{
     margin: 5px 0;

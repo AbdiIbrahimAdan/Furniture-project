@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import { FaBars } from "react-icons/fa6";
 import { FaTimes } from "react-icons/fa";
+import { FaShoppingCart } from "react-icons/fa";
 import './Header.css';
 import Head from './Head';
 
@@ -20,6 +21,10 @@ const Header = () => {
             <li><Link  to='/contact'>Contact</Link></li>
             
           </ul>
+          
+           <ul>
+            <li><Link to='/cart'> <FaShoppingCart /></Link></li>
+            </ul>
           <button className='toggle' onClick={() => setClick(!click)}>
             {click ?  <FaTimes /> :  <FaBars />}
           </button>
