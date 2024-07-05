@@ -16,7 +16,7 @@ import chair5 from '../assets/chair5.jpg';
 import bed6 from '../assets/bed6.jpg';
 import chair3 from '../assets/chair3.jpg';
 
-export const product = [
+export const products = [
   {id:1, image: chair1, name:"Chair", description:"comfortable armchair", price:'Ksh.4000'},
   {id:2, image: bed1, name:"Bed", description:"comfortable armchair", price:'Ksh.7000'},
   {id:3, image: table3, name:"Table", description:"comfortable armchair", price:'Ksh.5000'},

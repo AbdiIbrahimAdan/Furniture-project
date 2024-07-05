@@ -8,14 +8,18 @@ import New from './page/New Arrival/NewArrival';
 import Contact from './page/Contact/Contact';
 import Login from './page/Login/Login';
 import Signup from './page/Signup/Signup';
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Cart, {CartProvider} from './page/Cart/Cart';
+
 function App() {
  
   return (
     <>
      <BrowserRouter>
       <Header/>
+      <CartProvider>
       <Routes>
+        
       <Route path='/' element={<Home/>} />
       <Route path='/about us' element={<About/>} />
       <Route path='/shop' element={<Shop/>} />
@@ -24,7 +28,10 @@ function App() {
       <Route path='/login' element={<Login/>} />
       <Route path='/signup' element={<Signup/>} />
      
+      <Route path='/cart' element={<Cart/>} />
+      
       </Routes>
+      </CartProvider>
      </BrowserRouter>
     </>
   )

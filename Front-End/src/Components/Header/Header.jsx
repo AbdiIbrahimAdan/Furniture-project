@@ -3,10 +3,11 @@ import { Link } from 'react-router-dom';
 import { FaBars } from "react-icons/fa6";
 import { FaTimes } from "react-icons/fa";
 import { FaShoppingCart } from "react-icons/fa";
-import Login from '../../page/Login/Login';
-import Signup from '../../page/Signup/Signup';
+
+
 import './Header.css';
 import Head from './Head';
+
 
 const Header = () => {
   const[click, setClick] = useState(false);
@@ -23,10 +24,12 @@ const Header = () => {
             <li><Link  to='/contact'>Contact</Link></li>
             
           </ul>
-          
-           <ul>
-            <li><Link to='/cart'> <FaShoppingCart /></Link></li>
-            </ul>
+           <div className='cart-icon'>
+            <li><Link to="/cart"> <FaShoppingCart />
+           
+            
+            </Link></li>
+            </div>
           <button className='toggle' onClick={() => setClick(!click)}>
             {click ?  <FaTimes /> :  <FaBars />}
           </button>
