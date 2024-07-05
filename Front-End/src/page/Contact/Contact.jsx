@@ -3,6 +3,14 @@ import {Formik, Form, Field, ErrorMessage} from 'formik';
 import * as Yup from 'yup';
 import './Contact.css'
 const Contact = () => {
+
+  const initialValue ={
+    firstName:'',
+    lastName: '',
+    email: '',
+    subject: '',
+    message: '',
+  }
   const validateSchema = Yup.object({
     firstName:Yup.string().required('First Name is required').min(3,'First Name havve a minimum of 3 character').max(10,'First Name should have maximum of 10 character'),
     lastName:Yup.string().required('Last Name is required').min(3,'Last Name havve a minimum of 3 character').max(10,'Last Name should have maximum of 10 character'),
@@ -12,13 +20,7 @@ const Contact = () => {
     
   });
 
-  const initialValue ={
-    firstName:'',
-    lastName: '',
-    email: '',
-    subject: '',
-    message: '',
-  }
+  
   const onSubmit = (values, {setSubmitting})=>{
     console.log('form data', values);
   
@@ -37,8 +39,8 @@ const Contact = () => {
    
   return (
     <>
-      <div>
-        <h2>Contact us</h2>
+      <div className='contact-form-container'>
+        <h1>Contact us</h1>
 
         <Formik
         initialValue={initialValue}
@@ -65,7 +67,7 @@ const Contact = () => {
                 name='lastName'
                 
                 />
-                <ErrorMessage name='lastName' component= 'div' />
+                <ErrorMessage name='lastName' component= 'div' className='error-message' />
 
             </div>
 
@@ -75,7 +77,7 @@ const Contact = () => {
                 name='email'
                
                 />
-                <ErrorMessage name='email' component= 'div' />
+                <ErrorMessage name='email' component= 'div'  className='error-message'/>
             </div>
 
 
@@ -85,7 +87,7 @@ const Contact = () => {
                 name='subject'
                
                 />
-               <ErrorMessage name='subject' component= 'div' />
+               <ErrorMessage name='subject' component= 'div'  className='error-message'/>
 
             </div>
 
@@ -96,13 +98,13 @@ const Contact = () => {
                 name='message'
                 
                 />
-                <ErrorMessage name='message' component= 'div' />
+                <ErrorMessage name='message' component= 'div'  className='error-message'/>
 
             </div>
 
 
             <button type='submit' disabled ={isSubmitting}>
-              {isSubmitting ? 'Please wait...' : "submit"}
+              {isSubmitting ? 'Please wait...' : 'Submit'}
             </button>
           </Form>
         )}

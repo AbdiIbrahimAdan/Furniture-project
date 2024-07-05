@@ -1,3 +1,19 @@
-.error-message{
-    color: red;
+.contact-form-container{
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: white;
+}  
+
+h1{
+   text-align: center;
+   margin-bottom: 20px;
+}
+.contact-form{
+    display: flex;
+    flex-direction: column;
+}
+.form-control{
+    margin-bottom: 15px;
 }
