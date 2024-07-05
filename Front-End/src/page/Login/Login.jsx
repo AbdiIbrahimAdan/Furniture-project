@@ -12,7 +12,7 @@ const initialValues = {
  });
   return (
     <>
-      <div>
+      <div className='login-container'>
         <h2>Login</h2>
         <Formik 
             initialValues={initialValues}
