@@ -1,8 +1,9 @@
 import React from 'react'
 import {Formik, Form, Field, ErrorMessage} from 'formik';
 import * as Yup from 'yup';
+import axios from 'axios';
 import './Login.css'
-const Login = ({onSubmit}) => {
+const Login = () => {
 const initialValues = {
     email:'',
     password:''
@@ -11,6 +12,22 @@ const initialValues = {
     email:Yup.string().email('Invalid email address').required('Email is required'),
     password:Yup.string().required('Password is required')
  });
+
+ const handleSubmit = async (values, { setSubmitting, resetForm }) => {
+  try {
+    const response = await axios.post('http://localhost:3000/api/users/login', values, {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+    console.log(response.data);
+    resetForm();
+  } catch (error) {
+    console.error('Signup failed:', error);
+  } finally {
+    setSubmitting(false);
+  }
+};
   return (
     <>
       <div className='login-container'>
@@ -18,7 +35,7 @@ const initialValues = {
         <Formik 
             initialValues={initialValues}
             validationSchema={validationSchema}
-            onSubmit={onSubmit}
+            onSubmit={handleSubmit}
             >
           <Form>
 

@@ -10,8 +10,6 @@ const Head = () => {
         <div className="container main">
             <div className="logo">
                 <h1>FurniShop</h1>
-                <span>Get Best and high quality Furniture</span>
-
             </div>
             <div className="access">
               <div className="register">

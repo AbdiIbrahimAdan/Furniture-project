@@ -10,14 +10,16 @@ import Login from './page/Login/Login';
 import Signup from './page/Signup/Signup';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Cart, {CartProvider} from './page/Cart/Cart';
+import Footer from './Components/Footer/Footer';
 
 function App() {
  
   return (
     <>
      <BrowserRouter>
+     <CartProvider>
       <Header/>
-      <CartProvider>
+      
       <Routes>
         
       <Route path='/' element={<Home/>} />
@@ -32,6 +34,7 @@ function App() {
       
       </Routes>
       </CartProvider>
+      <Footer/>
      </BrowserRouter>
     </>
   )
