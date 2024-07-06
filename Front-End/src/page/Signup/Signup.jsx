@@ -63,7 +63,7 @@ const initialValues = {
                 <ErrorMessage name="confirmpassword" component="div" className='error' />
 
             </div>
-            <button type="submit">Sign Up</button>
+            <button type="submit">Create Account</button>
           </Form>
         </Formik>
       </div>

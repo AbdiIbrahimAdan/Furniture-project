@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaTrashAlt } from 'react-icons/fa';
-import {useCart, CartProvider } from './CartContext';
+import {useCart, CartProvider } from './CartContext.jsx';
 import './CartDisplay.css';
 
 const Cart = () => {
@@ -25,7 +25,7 @@ const Cart = () => {
                 </tr>
             </thead>
             <tbody>
-                {cartItems.map((item) =>{
+                {cartItems.map((item) =>(
                     <tr key={item.id }  className="product-info">
                         <td>
                             <img src={item.image} alt={item.title} width="50 "/>
@@ -37,14 +37,14 @@ const Cart = () => {
                             {item.quantity}
                             <button onClick={() => handleQuantityChange(item.id, item.quantity + 1)} className='quantity-btn'>+</button>
                         </td>
-                        <td>{(parseFloat(item.price) * item.quantity).toFixed(2)}</td>
+                        <td>{(parseFloat(item.price) * (item.quantity)).toFixed(2)}</td>
                          <td>
                             <button onClick={() => removeFromCart(item.id)}>
                             <FaTrashAlt />
                             </button>
                          </td>
                     </tr>
-                })}
+                ))}
             </tbody>
         </table>
         <div className="total">

@@ -1,6 +1,7 @@
 import React from 'react';
 import {useCart} from './../Cart/CartContext.jsx';
 import {products} from '../../Data/DummyData.js'
+
 import './Shop.css';
 const Shop = () => {
   const {addToCart, isInCart} = useCart();
