@@ -1,6 +1,7 @@
 import { Router } from "express";
 import { PrismaClient} from '@prisma/client';
 import bcrypt from 'bcrypt';
+import jwt from 'jsonwebtoken';
 const router = Router ();
 const prisma = new PrismaClient();
 router.post("/Signup", async(req, res) =>{
@@ -20,12 +21,70 @@ router.post("/Signup", async(req, res) =>{
             confirmPassword: hashedPassword,
            
          }
-      })
-      res.json({success:true, message: 'user Created successfully', user: newUser});
-   }catch(e){
-    res.status(500).json({success:false, message: e.message })
+      });
+
+       const token = jwt.sign({userId: newUser.id}, process.env.JWT_SECRET, {
+         expiresIn:'1h',
+       });
+
+       res.cookie('jwt', token, {
+         httpOnly:true,
+         secure: process.env.NODE_ENV === 'production',
+         sameSite: 'strict',
+       });
+
+
+
+      res.status(201).json({success:true, message: 'User signed up successfully', user: newUser});
+   }catch(error){
+      console.error('Signup failed:', error);
+    res.status(500).json({message: 'SignUp failed'});
    }
 });
+
+router.post('/login', async(req, res) =>{
+    const {email, password} =req.body;
+    try{
+      const user = await prisma.user.findUnique({
+         where: {email},
+      });
+
+      if(!user){
+         return res.status(404).json({message: 'User is not found'});
+
+      }
+
+      const passwordMatch = await bcrypt.compare(password, user.password);
+
+      if (!passwordMatch){
+         return res.status(401).json({message:'Invalid credentials'});
+      }
+
+      const token = jwt.sign({userId: user.id}, process.env.JWT_SECRET, {
+         expiresIn:'1h',
+       });
+
+       res.cookie('jwt', token, {
+         httpOnly:true,
+         secure: process.env.NODE_ENV === 'production',
+         sameSite: 'strict',
+       });
+       res.status(200).json({message: 'Login successful', user});
+    }catch(error){
+      console.error('Login fail:', error);
+      res.status(500).json({message: 'Login fail'});
+    }
+});
+
+
+
+
+
+
+
+
+
+
 
 router.get("/Signup", async(req, res) =>{
    try{
