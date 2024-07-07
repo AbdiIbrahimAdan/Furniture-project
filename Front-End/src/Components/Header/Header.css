@@ -98,16 +98,16 @@
       color: #fff;
       font-size: 30px;
       position: absolute;
-      margin-top: 25px;
+      margin-top: 14px;
       right: 0;
-      top: -20px;
+      top: -15px;
     }
     .mobile-nav {
       position: absolute;
       top: 7vh;
       left: 0;
       width: 100%;
-      background-color: #9daaa9;
+      background-color: #13b4a7;
     }
   }
   @media screen and (max-width: 340px) {

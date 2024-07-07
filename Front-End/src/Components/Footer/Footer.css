@@ -11,7 +11,7 @@
 .h2{
     font-size: 24px;
     margin-bottom: 10px;
-    color: black;
+    color: white;
 }
 p{
     font-size: 14px;
@@ -22,7 +22,8 @@ p{
 .footer-nav,
 .footer-social,
 .footer-contact{
-    width: calc(18% - 20px);
+    width: calc(14% - 20px);
+    color: #fff;
 }
 
 .footer-info h2,
@@ -45,7 +46,7 @@ p{
     flex-direction: column;
 }
 
-.social-link{
+.social-link {
     color: white;
     margin-right: 10px;
 }

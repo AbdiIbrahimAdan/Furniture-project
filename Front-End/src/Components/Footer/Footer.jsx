@@ -37,7 +37,7 @@ const Footer = () => {
     </div>
 
     <div className="footer-contact">
-        <h2>Contact Information</h2>
+        <h2>Contact</h2>
         <p>Phone:+25740000456</p>
         <p>Email:info@funishop.com</p>
     </div>
