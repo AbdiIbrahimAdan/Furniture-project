@@ -4,6 +4,7 @@ import * as Yup from 'yup';
 import './Contact.css';
 import Banner from '../../Components/Banner/Banner';
 import contactImage from './../../assets/New/couch2.jpg';
+import axios from 'axios';
 
 const Contact = () => {
   const validationSchema = Yup.object().shape({
@@ -34,13 +35,18 @@ const Contact = () => {
     message: '',
   };
 
-  const handleSubmit = (values, {setSubmitting}) => {
-    console.log('Form data', values);
-
-    setTimeout(() =>{
-      alert(JSON.stringify(values, null, 2));
+  
+  const handleSubmit = async (values, { setSubmitting }) => {
+    try {
+      const response = await axios.post('http://localhost:3000/api/contact', values); 
+      console.log('Response:', response.data);
+      alert('Message sent successfully!');
+    } catch (error) {
+      console.error('Error sending message:', error);
+      alert('Failed to send message.');
+    } finally {
       setSubmitting(false);
-    }, 400);
+    }
   };
   return (
     <>

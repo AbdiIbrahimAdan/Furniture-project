@@ -13,19 +13,20 @@
     display: flex;
     flex-direction: row;
 }
-
-
-.access{
+.register{
   display: flex;
-  flex-direction: row;
-  gap: 1rem;
-  
-}
-.register ,nav, ul, li{
-  color: white;
-  font-size: 19px;
 
 }
+.register nav ul{
+  display: flex;
+  font-weight: bold;
+  gap: 1rem;
+ 
+}
+.register nav ul li a{
+  color: #fff;
+}
+
 
 .social-links {
     color: #fff;
@@ -37,7 +38,7 @@
    
   }
   .social-links:hover{
-    color: #1eb2a6;
+    color: #000c0b;
   }
   
   
@@ -66,7 +67,7 @@
     transition: 0.5s;
   }
   header ul li a:hover {
-    color: #1eb2a6;
+    color: #010706;
   }
   .cart-icons{
     margin-top: 30px;
@@ -110,7 +111,7 @@
       background-color: #13b4a7;
     }
   }
-  @media screen and (max-width: 340px) {
+  @media screen and (max-width: 580px) {
     .social-links{
       display: none;
     }

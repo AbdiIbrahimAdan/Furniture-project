@@ -22,8 +22,10 @@ const initialValues = {
     });
     console.log(response.data);
     resetForm();
+    alert('Login Successfully');
   } catch (error) {
     console.error('Signup failed:', error);
+    alert('Failed to Login, please try again...')
   } finally {
     setSubmitting(false);
   }

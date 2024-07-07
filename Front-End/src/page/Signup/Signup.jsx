@@ -31,9 +31,12 @@ const Signup = () => {
         },
       });
       console.log(response.data);
+      alert('Your have created an account successfully');
       resetForm();
+
     } catch (error) {
       console.error('Signup failed:', error);
+      alert('Failed to create an account, please try again late...')
     } finally {
       setSubmitting(false);
     }

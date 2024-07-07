@@ -11,16 +11,16 @@ const Head = () => {
             <div className="logo">
                 <h1>FurniShop</h1>
             </div>
-            <div className="access">
+         
               <div className="register">
-            <nav>
+             <nav>
               <ul>
                 <li ><Link to='/login'>Login</Link></li>
                 <li><Link to='/signup'>Sign up</Link></li>
               </ul>
             </nav>
               </div>
-            </div>
+       
             <div className="social-links-icon">
             <a href="#" className="social-links">{ <FaFacebook /> }</a>
             <a href="#" className="social-links">{ <FaTwitter/> } </a>
