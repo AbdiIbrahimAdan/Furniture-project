@@ -23,7 +23,7 @@ router.post("/Signup", async(req, res) =>{
          }
       });
 
-       const token = jwt.sign(newUser, process.env.JWT_SECRET, {
+      const token = jwt.sign(newUser, process.env.JWT_SECRET, {
          expiresIn:'1h',
        });
 
@@ -60,7 +60,7 @@ router.post('/login', async(req, res) =>{
          return res.status(401).json({message:'Invalid credentials'});
       }
 
-      const token = jwt.sign({userId: user.id}, process.env.JWT_SECRET, {
+      const token = jwt.sign(newUser, process.env.JWT_SECRET, {
          expiresIn:'1h',
        });
 
