@@ -28,14 +28,14 @@ const Cart = () => {
                 {cartItems.map((item) =>(
                     <tr key={item.id }  className="product-info">
                         <td>
-                            <img src={item.image} alt={item.title} width="50 "/>
+                            <img src={item.image} alt={item.title} />
                             <p>{item.title}</p>
                             <p>{item.price}</p>
                         </td>
                         <td>
-                            <button onClick={() => handleQuantityChange(item.id, item.quantity - 1)} className='quantity-btn'>-</button>
+                            <button onClick={() => handleQuantityChange(item.id, item.quantity - 1)}>-</button>
                             {item.quantity}
-                            <button onClick={() => handleQuantityChange(item.id, item.quantity + 1)} className='quantity-btn'>+</button>
+                            <button onClick={() => handleQuantityChange(item.id, item.quantity + 1)} >+</button>
                         </td>
                         <td>
 

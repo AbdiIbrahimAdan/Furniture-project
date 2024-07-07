@@ -1,7 +1,7 @@
 
 import './App.css'
 import Header from './Components/Header/Header';
-import Home from './page/Home/Hero/Hero'
+import Home from './page/Home/Home'
 import About from './page/About/About';
 import Shop from './page/Shop/Shop';
 import New from './page/New Arrival/NewArrival';
@@ -11,6 +11,7 @@ import Signup from './page/Signup/Signup';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Cart, {CartProvider} from './page/Cart/Cart';
 import Footer from './Components/Footer/Footer';
+
 
 function App() {
  
@@ -33,8 +34,9 @@ function App() {
       <Route path='/cart' element={<Cart/>} />
       
       </Routes>
+      
       </CartProvider>
-      <Footer/>
+     <Footer/>
      </BrowserRouter>
     </>
   )

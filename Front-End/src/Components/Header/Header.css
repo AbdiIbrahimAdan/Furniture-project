@@ -17,12 +17,14 @@
 
 .access{
   display: flex;
+  flex-direction: row;
   gap: 1rem;
   
 }
 .register ,nav, ul, li{
   color: white;
   font-size: 19px;
+
 }
 
 .social-links {
