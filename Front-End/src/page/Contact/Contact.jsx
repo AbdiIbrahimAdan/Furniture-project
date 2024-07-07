@@ -2,6 +2,8 @@ import React from 'react';
 import {Formik, Form, Field, ErrorMessage} from 'formik';
 import * as Yup from 'yup';
 import './Contact.css';
+import Banner from '../../Components/Banner/Banner';
+import contactImage from './../../assets/New/couch2.jpg';
 
 const Contact = () => {
   const validationSchema = Yup.object().shape({
@@ -41,7 +43,8 @@ const Contact = () => {
     }, 400);
   };
   return (
-    
+    <>
+    <Banner title="Contact us" backgroundImage={contactImage}/>
       <div className="contact-form-container">
         <h1>Contact Us</h1>
         <Formik 
@@ -93,7 +96,7 @@ const Contact = () => {
 
         </Formik>
       </div>
-  
+      </>
   );
 };
 

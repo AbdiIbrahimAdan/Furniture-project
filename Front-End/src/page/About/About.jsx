@@ -1,9 +1,12 @@
 import React from 'react'
 import aboutImage from './../../assets/About.jpg';
+import backgroundImage from  './../../assets/ban.jpg';
 import './About.css';
+import Banner from '../../Components/Banner/Banner';
 const About = () => {
   return (
     <>
+    <Banner title="About us" backgroundImage={backgroundImage}/>
     <section className="about">
       <div className="about-img">
       <img src={aboutImage} alt="About us"/>

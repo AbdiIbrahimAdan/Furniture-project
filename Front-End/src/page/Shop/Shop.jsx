@@ -1,9 +1,12 @@
 import React from 'react';
 import {useCart} from './../Cart/CartContext.jsx';
 import {products} from '../../Data/DummyData.js'
+import Banner from '../../Components/Banner/Banner.jsx';
+import shopImage from './../../assets/banner2.jpg'
 
 import './Shop.css';
 const Shop = () => {
+  
   const {addToCart, isInCart} = useCart();
   const handleAddToCart = (product)=>{
     if (!isInCart(product.id)) {
@@ -16,6 +19,7 @@ const Shop = () => {
   }
   return (
     <>
+    <Banner title="Shop our Collection" backgroundImage={shopImage}/>
       <div className="shop">
         <h2>Shop</h2>
         <div className="products-display">

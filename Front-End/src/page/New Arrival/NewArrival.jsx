@@ -2,9 +2,13 @@ import React, {useState, useEffect} from 'react';
 import './NewArrival.css';
 import {useCart} from './../Cart/CartContext.jsx';
 import { FaStar } from "react-icons/fa";
+import Banner from '../../Components/Banner/Banner.jsx';
+import newImage from './../../assets/banner3.jpg'
 import {bedProducts, tableProducts, chairProducts, couchProducts} from './../../Data/DummyData.js';
 
 const NewArrival = () => {
+
+  
   const [currentHeader, setCurrentHeader] = useState('Bed');
   const [products, setProducts] = useState([]);
   useEffect(() =>{
@@ -53,6 +57,8 @@ const NewArrival = () => {
     return stars;
   };
   return (
+    <>
+    <Banner title="Our Popular products" backgroundImage={newImage}/>
     <div className='new-container'>
       <h1>New arrival</h1>
       <h2>{currentHeader}</h2>
@@ -71,6 +77,7 @@ const NewArrival = () => {
         ))}
       </div>
     </div>
+    </>
   );
 };
 

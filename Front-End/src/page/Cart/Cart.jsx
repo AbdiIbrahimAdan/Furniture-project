@@ -2,7 +2,8 @@ import React from 'react';
 import { FaTrashAlt } from 'react-icons/fa';
 import {useCart, CartProvider } from './CartContext.jsx';
 import './CartDisplay.css';
-
+import Banner from '../../Components/Banner/Banner.jsx';
+import cartImage from './../../assets/banner3.jpg'
 const Cart = () => {
     const {cartItems, removeFromCart, updateQuantity, clearCart, getTotalPrice}= useCart();
     const handleQuantityChange = (itemId,newQuantity) =>{
@@ -12,6 +13,7 @@ const Cart = () => {
     };
   return (
     <>
+    <Banner title="Your Shopping Cart" backgroundImage={cartImage}/>
       <div className="cart-container">
         <h2>Shopping Cart</h2>
 
