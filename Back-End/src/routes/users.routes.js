@@ -42,7 +42,7 @@ router.post("/Signup", async(req, res) =>{
    }
 });
 
-router.post('/login', async(req, res) =>{
+router.post("/login", async(req, res) =>{
     const {email, password} =req.body;
     try{
       const user = await prisma.user.findUnique({
@@ -60,7 +60,7 @@ router.post('/login', async(req, res) =>{
          return res.status(401).json({message:'Invalid credentials'});
       }
 
-      const token = jwt.sign(newUser, process.env.JWT_SECRET, {
+      const token = jwt.sign({id:user.id, email:user.email}, process.env.JWT_SECRET, {
          expiresIn:'1h',
        });
 
