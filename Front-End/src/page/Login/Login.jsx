@@ -1,9 +1,14 @@
 import React from 'react'
 import {Formik, Form, Field, ErrorMessage} from 'formik';
 import * as Yup from 'yup';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../../hooks/useAuth';
 import './Login.css'
 const Login = () => {
+  const navigate = useNavigate();
+  const {login} = useAuth();
 const initialValues = {
     email:'',
     password:''
@@ -19,7 +24,12 @@ const initialValues = {
       headers: {
         'Content-Type': 'application/json',
       },
+      
     });
+    if (response.status === 200){
+      login();
+      navigate ('/');
+     }
     console.log(response.data);
     resetForm();
     alert('Login Successfully');
@@ -55,7 +65,10 @@ const initialValues = {
             </div>
             <button type="submit">Login</button>
           </Form>
+
+          
         </Formik>
+        <p>Don't have an account? <Link to="/signup">Sign up</Link></p>
       </div>
     </>
   );
