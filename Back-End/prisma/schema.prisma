@@ -13,18 +13,19 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model User{
-  id String @id @default(uuid())
-  firstName String @map("First Name")
-  lastName  String @map("Last Name")
-  email    String  @map("Email")
-  password String @map("Password")
-  confirmPassword String @map("Confirm Password")
+model User {
+  id        String   @id @default(uuid())
+  firstName String   @map("First Name")
+  lastName  String   @map("Last Name")
+  email     String   @map("Email") @unique
+  password  String   @map("Password")
+  role      String   @default("user")
+  orders    Order[]
 
-
-  @@unique([email])
   @@map("users_info")
 }
+
+
 
 model Contact {
   id  String @id @default(uuid())
@@ -37,4 +38,33 @@ model Contact {
 
 
   @@map("contact_messages")
+}
+
+
+model Product {
+  id          Int      @id @default(autoincrement())
+  name        String
+  description String
+  price       Float
+  imageUrl    String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  orders      Order[]
+
+@@map("products_info")
+ 
+}
+
+model Order {
+  id        Int      @id @default(autoincrement())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  productId Int
+  product   Product  @relation(fields: [productId], references: [id])
+  quantity  Int
+  status    String   @default("pending")
+  createdAt DateTime @default(now())
+
+  @@map("orders_info")
 }
